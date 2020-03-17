@@ -2,7 +2,11 @@
   <div id="app">
     <div class="cm-container">
       <div class="cm-logo-wrapper">
-        <img alt="Carb Manager" src="./assets/cm-logo.svg" class="cm-logo" />
+        <img
+          alt="Carb Manager"
+          src="./assets/svg/cm-logo.svg"
+          class="cm-logo"
+        />
       </div>
       <h2>Carb Manager Dev Assignment</h2>
       <p>See the README file for assignment requirements.</p>
