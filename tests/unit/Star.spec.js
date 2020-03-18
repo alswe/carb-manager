@@ -1,9 +1,9 @@
-import { mount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import Star from "../../src/components/Star"
 
 describe("Star.vue", () => {
   it("displays star-full.svg for 'full' type of star", () => {
-    const wrapper = mount(Star, {
+    const wrapper = shallowMount(Star, {
       propsData: {
         type: 'full'
       }
@@ -12,7 +12,7 @@ describe("Star.vue", () => {
   });
 
   it("displays star-half.svg for 'half' type of star", () => {
-    const wrapper = mount(Star, {
+    const wrapper = shallowMount(Star, {
       propsData: {
         type: 'half'
       }
@@ -21,7 +21,7 @@ describe("Star.vue", () => {
   });
 
   it("displays star-empty.svg for 'empty' type of star", () => {
-    const wrapper = mount(Star, {
+    const wrapper = shallowMount(Star, {
       propsData: {
         type: 'empty'
       }
