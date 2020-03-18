@@ -1,14 +1,15 @@
 <template>
   <RecipeDurationOrEnergy
-    :value="duration"
-    :formatter="formatDuration"
-    icon="clock.svg"
+    :value="energy"
+    :formatter="formatEnergy"
+    icon="vector.svg"
+    :unit="energyUnits"
   />
 </template>
 
 <script>
 import RecipeDurationOrEnergy from "./libs/RecipeDurationOrEnergy";
-import { formatDuration } from "../utils/formatters";
+import { formatEnergy } from "../utils/formatters";
 
 export default {
   name: "RecipeDuration",
@@ -16,10 +17,14 @@ export default {
     RecipeDurationOrEnergy
   },
   props: {
-    duration: Number
+    energy: Number,
+    energyUnits: {
+      type: String,
+      default: "calories"
+    }
   },
   methods: {
-    formatDuration: formatDuration
+    formatEnergy: formatEnergy
   }
 };
 </script>

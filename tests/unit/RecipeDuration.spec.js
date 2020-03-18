@@ -1,13 +1,15 @@
-import { mount } from "@vue/test-utils"
-import RecipeDuration from "../../src/components/RecipeDuration"
+import { mount } from "@vue/test-utils";
+import RecipeDuration from "../../src/components/RecipeDuration";
+import { formatDuration } from "../../src/utils/formatters";
 
 describe("RecipeDuration.vue", () => {
   it("displays formatted duration", () => {
+    const duration = 100;
     const wrapper = mount(RecipeDuration, {
       propsData: {
-        duration: 100
+        duration: duration
       }
     });
-    expect(wrapper.text()).toMatchInlineSnapshot('"1 hr 40 min"');
+    expect(wrapper.text()).toMatchInlineSnapshot(`"${formatDuration(duration)}"`);
   });
 });

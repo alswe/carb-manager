@@ -1,6 +1,6 @@
 <template>
   <span>
-    <img :class="`star-${type}`" :src="fileName" :alt="type" />
+    <img :class="`star-${type}`" :src="iconPath" :alt="type" />
   </span>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     }
   },
   computed: {
-    fileName: function() {
+    iconPath: function() {
       const type = isValidStarType(this.type) ? this.type : 'full';
       return require(`../assets/svg/star-${type}.svg`);
     }

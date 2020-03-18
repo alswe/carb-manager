@@ -11,3 +11,5 @@ export const getValidScore = score => {
 }
 
 export const isValidStarType = type => ["full", "half", "empty"].includes(type);
+
+export const convertCalorieToKilojoule = colories => colories * 4.184;
