@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" @click="onClick">
     <div class="card-top-section">
       <img src="../assets/png/image.png" alt="food" />
       <div class="image-overlay"></div>
@@ -8,6 +8,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "PremiumRecipeCard",
+  props: {
+    onClick: Function
+  }
+};
+</script>
+
 <style scoped>
 .card-container {
   width: 343px;
@@ -15,6 +24,7 @@
   background: #ffffff;
   box-shadow: 0px 13px 35px rgba(0, 30, 47, 0.1);
   border-radius: 12px;
+  cursor: pointer;
   overflow: hidden;
   margin: 0 auto;
 }

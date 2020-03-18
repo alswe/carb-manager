@@ -12,7 +12,7 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <PremiumRecipeCard />
+        <PremiumRecipeCard :onClick="onCardClick" />
       </div>
     </div>
   </div>
@@ -25,6 +25,11 @@ export default {
   name: "App",
   components: {
     PremiumRecipeCard
+  },
+  methods: {
+    onCardClick: event => {
+      console.log("clicked", event);
+    }
   }
 };
 </script>

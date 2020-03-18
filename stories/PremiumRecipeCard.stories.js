@@ -14,6 +14,6 @@ export const Default = () => ({
   props: {
     // Add your props here and hook them up to the template below
   },
-  template: '<PremiumRecipeCard @click="action" />',
+  template: '<PremiumRecipeCard :onClick="action"/>',
   methods: { action: action("clicked") }
 });
