@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import RecipeDurationOrEnergy from "./libs/RecipeDurationOrEnergy";
+import RecipeDurationOrEnergy from "./shared/RecipeDurationOrEnergy";
 import { formatEnergy } from "../utils/formatters";
 
 export default {
