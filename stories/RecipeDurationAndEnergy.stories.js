@@ -1,4 +1,4 @@
-import { withKnobs, number, select } from "@storybook/addon-knobs";
+import { withKnobs, number, text, select } from "@storybook/addon-knobs";
 
 import RecipeDurationAndEnergy from "../src/components/RecipeDurationAndEnergy.vue";
 
@@ -23,6 +23,9 @@ export const Default = () => ({
         { Calories: 'calories', Kilojoules: 'kilojoules' },
         'calories'
       )
+    },
+    color: {
+      default: text('Color', '#0c0c0a')
     }
   },
   template: `
@@ -30,6 +33,7 @@ export const Default = () => ({
       :duration="duration"
       :energy="energy"
       :energy-units="energyUnits"
+      :color="color"
     />
   `
 });

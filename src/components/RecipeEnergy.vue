@@ -1,5 +1,5 @@
 <template>
-  <IconText :text="formatEnergy(energy, energyUnits)" icon="vector.svg" />
+  <IconText :text="formatEnergy(energy, energyUnits)" icon="vector" :color="color" />
 </template>
 
 <script>
@@ -16,7 +16,8 @@ export default {
     energyUnits: {
       type: String,
       default: "calories"
-    }
+    },
+    color: String
   },
   methods: {
     formatEnergy: formatEnergy

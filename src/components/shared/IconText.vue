@@ -1,6 +1,6 @@
 <template>
-  <span class="icon-text">
-    <img class="icon-text-icon" :src="iconPath" :alt="icon" />
+  <span class="icon-text" :style="`--icon-text-color: ${color}`">
+    <i class="icon-text-icon" v-html="iconContent" />
     <span class="icon-text-text">
       {{ text }}
     </span>
@@ -8,15 +8,18 @@
 </template>
 
 <script>
+import * as icons from "../../assets/svg/index";
+
 export default {
   name: "IconText",
   props: {
     text: String,
-    icon: String
+    icon: String,
+    color: String
   },
   computed: {
-    iconPath: function() {
-      return require(`../../assets/svg/${this.icon}`);
+    iconContent: function () {
+      return icons[this.icon];
     }
   }
 };
@@ -34,6 +37,6 @@ export default {
   font-size: 0.75rem;
   line-height: 1rem;
   padding-left: 0.5rem;
-  color: #393c40;
+  color: var(--icon-text-color);
 }
 </style>

@@ -14,9 +14,12 @@ export const Default = () => ({
     color: {
       default: text('Color', '#f94642')
     },
+    textColor: {
+      default: text('TextColor', '#f94642')
+    },
     text: {
       default: text('Text', '2g')
     }
   },
-  template: '<MacroDot :color="color" :text="text" />'
+  template: '<MacroDot :color="color" :text="text" :text-color="textColor" />'
 });

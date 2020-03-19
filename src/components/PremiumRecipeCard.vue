@@ -25,6 +25,7 @@
         :carbs="card.carbs"
         :protein="card.protein"
         :fats="card.fats"
+        view-type="premium"
       />
     </div>
   </div>

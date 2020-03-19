@@ -14,13 +14,16 @@ export const Default = () => ({
     icon: {
       default: select(
         'Icon',
-        { Clock: 'clock.svg', Vector: 'vector.svg' },
-        'clock.svg'
+        { Clock: 'clock', Vector: 'vector' },
+        'clock'
       )
     },
     text: {
       default: text('Text', '2 Calories')
+    },
+    color: {
+      default: text('Color', '#0c0c0a')
     }
   },
-  template: '<IconText :icon="icon" :text="text" />'
+  template: '<IconText :icon="icon" :text="text" :color="color" />'
 });

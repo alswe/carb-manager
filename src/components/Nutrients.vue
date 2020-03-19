@@ -1,9 +1,9 @@
 <template>
-  <span class="nutrients">
+  <div class="nutrients">
     <span class="nutrient" v-for="(nutrient, index) in nutrients" :key="index">
-      <MacroDot :text="nutrient.text" :color="nutrient.color" />
+      <MacroDot :text="nutrient.text" :color="nutrient.color" :text-color="color" />
     </span>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -18,7 +18,8 @@ export default {
   props: {
     carbs: Number,
     protein: Number,
-    fats: Number
+    fats: Number,
+    color: String
   },
   computed: {
     nutrients: function() {

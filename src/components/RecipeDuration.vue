@@ -1,5 +1,5 @@
 <template>
-  <IconText :text="formatDuration(duration)" icon="clock.svg" />
+  <IconText :text="formatDuration(duration)" icon="clock" :color="color" />
 </template>
 
 <script>
@@ -12,7 +12,8 @@ export default {
     IconText
   },
   props: {
-    duration: Number
+    duration: Number,
+    color: String
   },
   methods: {
     formatDuration: formatDuration

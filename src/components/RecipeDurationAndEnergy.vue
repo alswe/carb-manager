@@ -1,12 +1,12 @@
 <template>
-  <span class="recipe-duration-and-energy">
+  <div class="recipe-duration-and-energy">
     <span class="recipe-duration">
-      <RecipeDuration :duration="duration" />
+      <RecipeDuration :duration="duration" :color="color" />
     </span>
     <span class="recipe-energy">
-      <RecipeEnergy :energy="energy" :energy-units="energyUnits" />
+      <RecipeEnergy :energy="energy" :energy-units="energyUnits" :color="color" />
     </span>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -22,7 +22,8 @@ export default {
   props: {
     duration: Number,
     energy: Number,
-    energyUnits: String
+    energyUnits: String,
+    color: String
   }
 };
 </script>

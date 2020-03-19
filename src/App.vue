@@ -15,8 +15,11 @@
         <PremiumRecipeCard
           :onClick="onCardClick"
           :card="card"
-          favorite="true"
+          :favorite="true"
         />
+      </div>
+      <div class="premium-recipe-wrapper">
+        <RecipeOfTheDay :onClick="onCardClick" :card="card" />
       </div>
     </div>
   </div>
@@ -24,12 +27,14 @@
 
 <script>
 import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
+import RecipeOfTheDay from "./components/RecipeOfTheDay.vue";
 import { card } from "./mock";
 
 export default {
   name: "App",
   components: {
-    PremiumRecipeCard
+    PremiumRecipeCard,
+    RecipeOfTheDay
   },
   data: function() {
     return {

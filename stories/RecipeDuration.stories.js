@@ -1,4 +1,4 @@
-import { withKnobs, number } from "@storybook/addon-knobs";
+import { withKnobs, number, text } from "@storybook/addon-knobs";
 
 import RecipeDuration from "../src/components/RecipeDuration.vue";
 
@@ -13,7 +13,10 @@ export const Default = () => ({
   props: {
     duration: {
       default: number('Duration', 0)
+    },
+    color: {
+      default: text('Color', '#0c0c0a')
     }
   },
-  template: '<RecipeDuration :duration="duration" />'
+  template: '<RecipeDuration :duration="duration" :color="color" />'
 });

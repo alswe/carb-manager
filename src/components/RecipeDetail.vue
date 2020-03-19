@@ -1,21 +1,26 @@
 <template>
-  <div class="recipe-detail">
-    <div class="recipe-title" :title="title">
+  <div class="recipe-detail" :style="`--recipe-font-color: ${color}`">
+    <div :class="`recipe-title ${viewType}`" :title="title">
       <p>{{ title }}</p>
     </div>
     <div class="recipe-ratings">
       <StarRating :score="score" />
-      <span class="recipe-rating-count">
+      <span v-if="viewType === 'premium'" class="recipe-rating-count">
         {{ stringFormat(ratings, " ratings") }}
       </span>
     </div>
-    <div class="recipe-characteristics">
-      <RecipeDurationAndEnergy
-        :duration="duration"
-        :energy="energy"
-        :energy-units="energyUnits"
-      />
-      <Nutrients :carbs="carbs" :protein="protein" :fats="fats" />
+    <div :class="`recipe-characteristics ${viewType}`">
+      <div>
+        <RecipeDurationAndEnergy
+          :duration="duration"
+          :energy="energy"
+          :energy-units="energyUnits"
+          :color="color"
+        />
+      </div>
+      <div>
+        <Nutrients :carbs="carbs" :protein="protein" :fats="fats" :color="color" />
+      </div>
     </div>
   </div>
 </template>
@@ -42,7 +47,16 @@ export default {
     energyUnits: String,
     carbs: Number,
     protein: Number,
-    fats: Number
+    fats: Number,
+    viewType: {
+      type: String,
+      default: "premium"
+    }
+  },
+  computed: {
+    color: function() {
+      return this.viewType === "day" ? "#ffffff" : "#0c0c0a";
+    }
   },
   methods: {
     stringFormat: stringFormat
@@ -69,8 +83,13 @@ export default {
   font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.25rem;
-  color: #0c0c0a;
   text-align: left;
+}
+.recipe-title.premium p {
+  color: #0c0c0a;
+}
+.recipe-title.day p {
+  color: #ffffff;
 }
 .recipe-ratings {
   display: flex;
@@ -86,10 +105,17 @@ export default {
   line-height: 0.875rem;
   padding-left: 0.5rem;
 }
-.recipe-characteristics {
+.recipe-characteristics.premium {
   display: flex;
   line-height: 0.75rem;
   justify-content: space-between;
   margin-top: 0.5rem;
+}
+.recipe-characteristics.day {
+  display: block;
+  margin-top: 0.5rem;
+}
+.recipe-characteristics.day > div:last-child {
+  margin-top: 0.75rem;
 }
 </style>
