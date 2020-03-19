@@ -3,6 +3,8 @@ import { convertCalorieToKilojoule } from "./index"
 
 export const numberFormat = (number, locale = 'en-En') => new Intl.NumberFormat(locale).format(number);
 
+export const stringFormat = (string, suffix) => `${string}${suffix}`;
+
 export function formatDuration(duration) {
   const min = duration % 60;
   if (duration < 60) {
@@ -18,5 +20,3 @@ export function formatEnergy(energy, energyUnits) {
   }
   return `${numberFormat(energy)} Calories`;
 }
-
-export const formatNutrient = (nutrient) => `${numberFormat(nutrient)}g`;

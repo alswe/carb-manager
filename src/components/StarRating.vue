@@ -49,6 +49,6 @@ export default {
 
 <style scoped>
 .star-rating-star {
-  padding-right: 3px;
+  padding-right: 1.69px;
 }
 </style>

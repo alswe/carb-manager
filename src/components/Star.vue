@@ -1,6 +1,6 @@
 <template>
   <span>
-    <img :class="`star-${type}`" :src="iconPath" :alt="type" />
+    <img :class="`star star-${type}`" :src="iconPath" :alt="type" />
   </span>
 </template>
 
@@ -23,3 +23,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.star {
+  height: 0.75rem;
+}
+</style>

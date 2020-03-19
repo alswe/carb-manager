@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import Nutrients from "../../src/components/Nutrients";
-import { formatNutrient } from "../../src/utils/formatters";
+import { stringFormat } from "../../src/utils/formatters";
 
 describe("Nutrients.vue", () => {
   it("displays formatted nutrients", () => {
@@ -14,8 +14,9 @@ describe("Nutrients.vue", () => {
         fats: fats
       }
     });
+    const unit = 'g';
     expect(wrapper.text()).toMatchInlineSnapshot(
-      `"${formatNutrient(carbs)}${formatNutrient(protein)}${formatNutrient(fats)}"`
+      `"${stringFormat(carbs, unit)}${stringFormat(protein, unit)}${stringFormat(fats, unit)}"`
     );
   });
 });

@@ -8,7 +8,7 @@
 
 <script>
 import MacroDot from "./shared/MacroDot";
-import { formatNutrient } from "../utils/formatters";
+import { stringFormat } from "../utils/formatters";
 
 export default {
   name: "Nutrients",
@@ -22,15 +22,13 @@ export default {
   },
   computed: {
     nutrients: function() {
+      const unit = 'g';
       return [
-        { text: formatNutrient(this.carbs), color: "#f94642" },
-        { text: formatNutrient(this.protein), color: "#3177bb" },
-        { text: formatNutrient(this.fats), color: "#fda120" }
+        { text: stringFormat(this.carbs, unit), color: "#f94642" },
+        { text: stringFormat(this.protein, unit), color: "#3177bb" },
+        { text: stringFormat(this.fats, unit), color: "#fda120" }
       ];
     }
-  },
-  methods: {
-    formatNutrient: formatNutrient
   }
 };
 </script>
