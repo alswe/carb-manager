@@ -1,7 +1,7 @@
-import { convertCalorieToKilojoule } from "./index"
+import { convertCalorieToKilojoule } from "./index";
 
-
-export const numberFormat = (number, locale = 'en-En') => new Intl.NumberFormat(locale).format(number);
+export const numberFormat = (number, locale = "en-En") =>
+  new Intl.NumberFormat(locale).format(number);
 
 export const stringFormat = (string, suffix) => `${string}${suffix}`;
 
@@ -15,7 +15,7 @@ export function formatDuration(duration) {
 }
 
 export function formatEnergy(energy, energyUnits) {
-  if ('kilojoules' === energyUnits) {
+  if ("kilojoules" === energyUnits) {
     return `${numberFormat(convertCalorieToKilojoule(energy))} Kilojoules`;
   }
   return `${numberFormat(energy)} Calories`;

@@ -14,8 +14,8 @@ describe("RecipeDurationAndEnergy.vue", () => {
         energyUnits: energyUnits
       }
     });
-    expect(wrapper.text()).toMatchInlineSnapshot(
-      `"${formatDuration(duration)}  ${formatEnergy(energy, energyUnits)}"`
+    expect(wrapper.text().replace(/(\r\n|\n|\r)/g, "")).toMatchInlineSnapshot(
+      `"${formatDuration(duration)}        ${formatEnergy(energy, energyUnits)}"`
     );
   });
 });

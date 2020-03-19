@@ -1,4 +1,4 @@
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, select } from "@storybook/addon-knobs";
 
 import Star from "../src/components/Star.vue";
 
@@ -12,7 +12,11 @@ export const Default = () => ({
   components: { Star },
   props: {
     type: {
-      default: text('Type', 'full')
+      default: select(
+        'Type',
+        { Full: 'full', Half: 'half', Empty: 'empty' },
+        'full'
+      )
     }
   },
   template: '<Star :type="type" />'

@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     nutrients: function() {
-      const unit = 'g';
+      const unit = "g";
       return [
         { text: stringFormat(this.carbs, unit), color: "#f94642" },
         { text: stringFormat(this.protein, unit), color: "#3177bb" },

@@ -1,6 +1,8 @@
 <template>
   <span class="macro-dot">
-    <span class="macro-dot-text" :style="`--dot-background-color: ${color}`">{{ text }}</span>
+    <span class="macro-dot-text" :style="`--dot-background-color: ${color}`">
+      {{ text }}
+    </span>
   </span>
 </template>
 
@@ -33,5 +35,4 @@ export default {
   border-radius: calc(var(--macro-dot) / 2);
   margin-right: 0.25rem;
 }
-
 </style>

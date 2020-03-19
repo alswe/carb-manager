@@ -5,10 +5,16 @@
     </div>
     <div class="recipe-ratings">
       <StarRating :score="score" />
-      <span class="recipe-rating-count">{{ stringFormat(ratings, ' ratings') }}</span>
+      <span class="recipe-rating-count">
+        {{ stringFormat(ratings, " ratings") }}
+      </span>
     </div>
     <div class="recipe-characteristics">
-      <RecipeDurationAndEnergy :duration="duration" :energy="energy" :energy-units="energyUnits" />
+      <RecipeDurationAndEnergy
+        :duration="duration"
+        :energy="energy"
+        :energy-units="energyUnits"
+      />
       <Nutrients :carbs="carbs" :protein="protein" :fats="fats" />
     </div>
   </div>
@@ -48,6 +54,7 @@ export default {
 .recipe-detail {
   max-width: 19.4375rem;
   max-height: 5.875rem;
+  margin: 0.5rem 1rem 1rem 1rem;
   position: relative;
 }
 .recipe-title {
@@ -63,6 +70,7 @@ export default {
   font-weight: bold;
   line-height: 1.25rem;
   color: #0c0c0a;
+  text-align: left;
 }
 .recipe-ratings {
   display: flex;

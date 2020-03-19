@@ -12,7 +12,6 @@
 <script>
 import RecipeDuration from "./RecipeDuration";
 import RecipeEnergy from "./RecipeEnergy";
-import { formatDuration } from "../utils/formatters";
 
 export default {
   name: "RecipeDurationAndEnergy",

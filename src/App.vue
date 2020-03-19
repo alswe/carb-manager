@@ -12,7 +12,11 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <PremiumRecipeCard :onClick="onCardClick" />
+        <PremiumRecipeCard
+          :onClick="onCardClick"
+          :card="card"
+          favorite="true"
+        />
       </div>
     </div>
   </div>
@@ -20,11 +24,17 @@
 
 <script>
 import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
+import { card } from "./mock";
 
 export default {
   name: "App",
   components: {
     PremiumRecipeCard
+  },
+  data: function() {
+    return {
+      card: card
+    };
   },
   methods: {
     onCardClick: event => {
@@ -62,8 +72,8 @@ export default {
 
 /** Remove these styles when done */
 .premium-recipe-wrapper {
-  margin-top: 100px;
-  border: 2px dashed red;
   padding: 16px;
+  display: flex;
+  justify-content: space-around;
 }
 </style>

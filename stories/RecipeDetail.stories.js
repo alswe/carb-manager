@@ -1,4 +1,4 @@
-import { withKnobs, number, text } from "@storybook/addon-knobs";
+import { withKnobs, number, text, select } from "@storybook/addon-knobs";
 
 import RecipeDetail from "../src/components/RecipeDetail.vue";
 
@@ -27,7 +27,11 @@ export const Default = () => ({
       default: number('Energy', 0)
     },
     energyUnits: {
-      default: text('EnergyUnits', 'colories')
+      default: select(
+        'Energy Units',
+        { Calories: 'calories', Kilojoules: 'kilojoules' },
+        'calories'
+      )
     },
     carbs: {
       default: number('Cabs', 20)

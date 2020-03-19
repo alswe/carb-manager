@@ -1,19 +1,15 @@
 <template>
-  <RecipeDurationOrEnergy
-    :value="duration"
-    :formatter="formatDuration"
-    icon="clock.svg"
-  />
+  <IconText :text="formatDuration(duration)" icon="clock.svg" />
 </template>
 
 <script>
-import RecipeDurationOrEnergy from "./shared/RecipeDurationOrEnergy";
+import IconText from "./shared/IconText";
 import { formatDuration } from "../utils/formatters";
 
 export default {
   name: "RecipeDuration",
   components: {
-    RecipeDurationOrEnergy
+    IconText
   },
   props: {
     duration: Number

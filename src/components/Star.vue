@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     iconPath: function() {
-      const type = isValidStarType(this.type) ? this.type : 'full';
+      const type = isValidStarType(this.type) ? this.type : "full";
       return require(`../assets/svg/star-${type}.svg`);
     }
   }
