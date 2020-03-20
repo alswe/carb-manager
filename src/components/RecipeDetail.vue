@@ -19,7 +19,12 @@
         />
       </div>
       <div>
-        <Nutrients :carbs="carbs" :protein="protein" :fats="fats" :color="color" />
+        <Nutrients
+          :carbs="carbs"
+          :protein="protein"
+          :fats="fats"
+          :color="color"
+        />
       </div>
     </div>
   </div>

@@ -16,7 +16,7 @@ describe("Nutrients.vue", () => {
     });
     const unit = 'g';
     expect(wrapper.text().replace(/(\r\n|\n|\r)/g, "")).toMatchInlineSnapshot(
-      `"${stringFormat(carbs, unit)}      ${stringFormat(protein, unit)}      ${stringFormat(fats, unit)}"`
+      `"${stringFormat(carbs, unit)}${stringFormat(protein, unit)}${stringFormat(fats, unit)}"`
     );
   });
 });

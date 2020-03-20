@@ -1,8 +1,8 @@
 import { action } from "@storybook/addon-actions";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, object } from "@storybook/addon-knobs";
 
 import RecipeOfTheDay from "../src/components/RecipeOfTheDay.vue";
-import { card } from "../src/mock";
+import { cards } from "../src/mock";
 
 export default {
   title: "RecipeOfTheDay",
@@ -13,9 +13,8 @@ export default {
 export const Default = () => ({
   components: { RecipeOfTheDay },
   props: {
-    // Add your props here and hook them up to the template below
     card: {
-      default: card
+      default: object('Card', cards[1], 'Card - 2')
     }
   },
   template: '<RecipeOfTheDay :onClick="action" :card="card" />',

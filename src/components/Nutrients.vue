@@ -1,7 +1,11 @@
 <template>
   <div class="nutrients">
     <span class="nutrient" v-for="(nutrient, index) in nutrients" :key="index">
-      <MacroDot :text="nutrient.text" :color="nutrient.color" :text-color="color" />
+      <MacroDot
+        :text="nutrient.text"
+        :color="nutrient.color"
+        :text-color="color"
+      />
     </span>
   </div>
 </template>

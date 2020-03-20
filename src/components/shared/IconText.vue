@@ -18,7 +18,7 @@ export default {
     color: String
   },
   computed: {
-    iconContent: function () {
+    iconContent: function() {
       return icons[this.icon];
     }
   }

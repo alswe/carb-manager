@@ -41,12 +41,11 @@ export default {
   },
   props: {
     onClick: Function,
-    card: Object,
-    favorite: Boolean
+    card: Object
   },
   computed: {
     favoriteIconFileName: function() {
-      return this.favorite ? "heart-filled.svg" : "heart-outlined.svg";
+      return this.card.inWishList ? "heart-filled.svg" : "heart-outlined.svg";
     },
     favoriteIconPath: function() {
       return require(`../assets/svg/${this.favoriteIconFileName}`);

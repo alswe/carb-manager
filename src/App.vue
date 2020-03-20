@@ -11,15 +11,21 @@
       <h2>Carb Manager Dev Assignment</h2>
       <p>See the README file for assignment requirements.</p>
 
-      <div class="premium-recipe-wrapper">
+      <div class="recipe-wrapper">
         <PremiumRecipeCard
+          v-for="(card, index) in cards"
+          :key="index"
           :onClick="onCardClick"
           :card="card"
-          :favorite="true"
         />
       </div>
-      <div class="premium-recipe-wrapper">
-        <RecipeOfTheDay :onClick="onCardClick" :card="card" />
+      <div class="recipe-wrapper">
+        <RecipeOfTheDay
+          v-for="(card, index) in cards"
+          :key="index"
+          :onClick="onCardClick"
+          :card="card"
+        />
       </div>
     </div>
   </div>
@@ -28,7 +34,7 @@
 <script>
 import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
 import RecipeOfTheDay from "./components/RecipeOfTheDay.vue";
-import { card } from "./mock";
+import { cards } from "./mock";
 
 export default {
   name: "App",
@@ -38,7 +44,7 @@ export default {
   },
   data: function() {
     return {
-      card: card
+      cards: cards
     };
   },
   methods: {
@@ -75,10 +81,17 @@ export default {
   margin: auto;
 }
 
-/** Remove these styles when done */
-.premium-recipe-wrapper {
+.recipe-wrapper {
   padding: 16px;
   display: flex;
   justify-content: space-around;
+}
+@media screen and (max-width: 686px) {
+  .recipe-wrapper {
+    display: grid;
+  }
+  .recipe-wrapper > div:not(:first-child) {
+    margin-top: 1rem;
+  }
 }
 </style>

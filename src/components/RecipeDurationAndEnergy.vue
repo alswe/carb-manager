@@ -4,7 +4,11 @@
       <RecipeDuration :duration="duration" :color="color" />
     </span>
     <span class="recipe-energy">
-      <RecipeEnergy :energy="energy" :energy-units="energyUnits" :color="color" />
+      <RecipeEnergy
+        :energy="energy"
+        :energy-units="energyUnits"
+        :color="color"
+      />
     </span>
   </div>
 </template>

@@ -1,8 +1,6 @@
 <template>
   <span class="macro-dot">
-    <span class="macro-dot-text" :style="`--dot-background-color: ${color}; --dot-text-color: ${textColor}`">
-      {{ text }}
-    </span>
+    <span class="macro-dot-text" :style="styleVariables">{{ text }}</span>
   </span>
 </template>
 
@@ -13,6 +11,11 @@ export default {
     color: String,
     text: String,
     textColor: String
+  },
+  computed: {
+    styleVariables: function() {
+      return `--dot-background-color: ${this.color}; --dot-text-color: ${this.textColor}`;
+    }
   }
 };
 </script>

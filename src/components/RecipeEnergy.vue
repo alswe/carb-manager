@@ -1,5 +1,9 @@
 <template>
-  <IconText :text="formatEnergy(energy, energyUnits)" icon="vector" :color="color" />
+  <IconText
+    :text="formatEnergy(energy, energyUnits)"
+    icon="vector"
+    :color="color"
+  />
 </template>
 
 <script>
